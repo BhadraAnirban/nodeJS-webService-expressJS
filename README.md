@@ -60,3 +60,22 @@ app.listen(4100, () => {
 
 ```
 
+## Use of Environment variable –
+As port will be different in test, production server. So better to use environment variable to mention port number.
+process is a global object.
+```
+const port = process.env.PORT || 4100; 
+// env is the environment object and PORT is the variable name.
+app.listen(port, () => {
+    console.log(`4100 server Started at ${port}...`);
+});
+```
+In the command line –
+```
+In case of window PowerShell: $env:PORT=2600
+In case of windows: set PORT=2600
+In case of mac: export PORT=2600
+
+node <node file name>: node expresshttp.js
+```
+
