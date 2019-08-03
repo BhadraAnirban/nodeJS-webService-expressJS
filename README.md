@@ -107,12 +107,17 @@ app.get('/api/library/:id/:department?', (req, res) => {
 ## CRUD Operations
 ```
 const express = require('express');
-const Joi = require('@hapi/joi');
 const app = express();
-
-// in order to use body in request, as a json we need to enable it in the express/
+```
+// in order to use body in request, as a json we need to enable it in the express.
+```
 app.use(express.json());
-
+```
+// to validate JSON object use a module called joi: npm install --save @hapi/joi.
+```
+const Joi = require('@hapi/joi'); 
+```
+```
 let courses = [
     {id: 1, name: 'NodeJS'},
     {id: 2, name: 'Angular'},
@@ -177,6 +182,7 @@ app.put('/api/courses/:id', (req, res) => {
     course.name = req.body.name;
     res.send(course);
 });
+
 ```
 
 ## JSON Object validation using joi
