@@ -32,8 +32,10 @@ In the command line -
 ### node nodehttp.js
 
 Now you can access using url -
+```
 http://localhost:4000
 http://localhost:4000/api/pmkj
+```
 
 ## Use of Express.js:
 ### npm install express.js --save
