@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/BhadraAnirban/nodeJS-webService-expressJS#readme",
   "dependencies": {
+    "@hapi/joi": "^15.1.0",
     "express": "^4.17.1"
   }
 }
