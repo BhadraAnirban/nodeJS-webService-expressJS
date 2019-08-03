@@ -183,6 +183,17 @@ app.put('/api/courses/:id', (req, res) => {
     res.send(course);
 });
 
+app.delete('/api/courses/:id', (req, res) => {
+    let course = courses.find(p => p.id === parseInt(req.params.id) );
+    if(!course)
+    {
+        res.status(404).send({error: 'notfound', message: 'Invalid course id'}); // 404: Object not found
+        return;
+    }
+    courses = courses.filter(p => {return p.id != req.params.id});
+    res.status(200).send();
+});
+
 ```
 
 ## JSON Object validation using joi
