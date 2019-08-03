@@ -109,7 +109,7 @@ app.get('/api/library/:id/:department?', (req, res) => {
 const express = require('express');
 const app = express();
 ```
-// in order to use body in request, as a json we need to enable it in the express.
+// in order to use body of the request, as a json, we need to enable it in the express.
 ```
 app.use(express.json());
 ```
