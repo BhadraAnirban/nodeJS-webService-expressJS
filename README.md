@@ -7,7 +7,7 @@ In a file named nodehttp.js (any name) -
 const http = require('http');
 
 const server = http.createServer((req, res) => {
-    console.log('req url: ' + req.url);
+    
     if(req.url === '/'){
         res.write('PMKJ ki Jay');
         res.end();
@@ -143,7 +143,7 @@ app.get('/api/courses/:id', (req, res)=> {
 });
 
 app.post('/api/courses', (req, res) => {
-    console.log(req.body);
+    
     const courseSchema = {
         name: Joi.string().min(3).max(30).required(),
     };
@@ -190,8 +190,12 @@ app.delete('/api/courses/:id', (req, res) => {
         res.status(404).send({error: 'notfound', message: 'Invalid course id'}); // 404: Object not found
         return;
     }
-    courses = courses.filter(p => {return p.id != req.params.id});
-    res.status(200).send();
+
+    //courses = courses.filter(p => {return p.id != req.params.id});
+
+    const index = courses.indexOf(course);
+    courses.splice(index, 1);
+    res.status(200).send(course);
 });
 
 ```

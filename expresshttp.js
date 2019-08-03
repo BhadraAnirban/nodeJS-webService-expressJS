@@ -110,8 +110,12 @@ app.delete('/api/courses/:id', (req, res) => {
         res.status(404).send({error: 'notfound', message: 'Invalid course id'}); // 404: Object not found
         return;
     }
-    courses = courses.filter(p => {return p.id != req.params.id});
-    res.status(200).send();
+
+    //courses = courses.filter(p => {return p.id != req.params.id});
+
+    const index = courses.indexOf(course);
+    courses.splice(index, 1);
+    res.status(200).send(course);
 });
 
 
